@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>1物理像素适配</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width:8rem;
+				height:8rem;
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			var dpr=window.devicePixelRatio;
+			var scale=1/dpr;
+			var metaNode=document.querySelector('meta[name="viewport"]');
+			metaNode.content="initial-scale="+scale+",user-scalable=no";
+			
+			var width=document.documentElement.clientWidth;
+			var styleNode=document.createElement('style');
+			styleNode.innerHTML='html{font-size:'+width/16+'px !important;}';
+			document.head.appendChild(styleNode);
+		</script>
+	</body>
+</html>

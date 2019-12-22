@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>viewport适配</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var targetWidth=300;
+			var width=document.documentElement.clientWidth;
+			var scale=width / targetWidth;
+			var metaNode=document.querySelector('meta[name="viewport"]');
+			metaNode.content="initial-scale="+scale+",user-scalable=no";
+		</script>
+	</body>
+</html>
